@@ -1,0 +1,4023 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/sandeepmistry/noble">noble (v1.8.0)</a>
+</h1>
+<h4>A Node.js BLE (Bluetooth Low Energy) central library.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble">module noble</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble">
+            function <span class="apidocSignatureSpan"></span>noble
+            <span class="apidocSignatureSpan">(bindings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic">
+            function <span class="apidocSignatureSpan">noble.</span>characteristic
+            <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, uuid, properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor">
+            function <span class="apidocSignatureSpan">noble.</span>descriptor
+            <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, characteristicUuid, uuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral">
+            function <span class="apidocSignatureSpan">noble.</span>peripheral
+            <span class="apidocSignatureSpan">(noble, id, address, addressType, connectable, advertisement, rssi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service">
+            function <span class="apidocSignatureSpan">noble.</span>service
+            <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">noble.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_bindings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_bindings._events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_characteristics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_descriptors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_discoveredPeripheralUUids</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_peripherals</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>_services</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>characteristic.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>descriptor.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>noble.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>peripheral.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble.</span>service.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">noble.</span>address</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">noble.</span>state</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble._bindings">module noble._bindings</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings.onSigIntBinded">
+            function <span class="apidocSignatureSpan">noble._bindings.</span>onSigIntBinded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">noble._bindings.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_aclStreams</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_addresseTypes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_addresses</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_connectable</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_connectionQueue</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_gap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_gatts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_handles</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_hci</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_pendingConnectionUuid</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">noble._bindings.</span>_signalings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">noble._bindings.</span>_state</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble._bindings._events">module noble._bindings._events</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.addressChange">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>addressChange
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.broadcast">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>broadcast
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.characteristicsDiscover">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>characteristicsDiscover
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.connect">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.descriptorsDiscover">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>descriptorsDiscover
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.disconnect">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.discover">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>discover
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.handleNotify">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleNotify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.handleRead">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleRead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.handleWrite">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleWrite
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.includedServicesDiscover">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>includedServicesDiscover
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.notify">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>notify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.read">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.rssiUpdate">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>rssiUpdate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.scanStart">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>scanStart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.scanStop">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>scanStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.servicesDiscover">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>servicesDiscover
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.stateChange">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>stateChange
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.valueRead">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>valueRead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.valueWrite">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>valueWrite
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings._events.write">
+            function <span class="apidocSignatureSpan">noble._bindings._events.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble._events">module noble._events</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._events.warning">
+            function <span class="apidocSignatureSpan">noble._events.</span>warning
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.characteristic">module noble.characteristic</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.characteristic">
+            function <span class="apidocSignatureSpan">noble.</span>characteristic
+            <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, uuid, properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.super_">
+            function <span class="apidocSignatureSpan">noble.characteristic.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.characteristic.prototype">module noble.characteristic.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.broadcast">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>broadcast
+            <span class="apidocSignatureSpan">(broadcast, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.discoverDescriptors">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>discoverDescriptors
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.notify">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>notify
+            <span class="apidocSignatureSpan">(notify, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.read">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>read
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.subscribe">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>subscribe
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.toString">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.unsubscribe">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>unsubscribe
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.characteristic.prototype.write">
+            function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>write
+            <span class="apidocSignatureSpan">(data, withoutResponse, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.descriptor">module noble.descriptor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor.descriptor">
+            function <span class="apidocSignatureSpan">noble.</span>descriptor
+            <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, characteristicUuid, uuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor.super_">
+            function <span class="apidocSignatureSpan">noble.descriptor.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.descriptor.prototype">module noble.descriptor.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor.prototype.readValue">
+            function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>readValue
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor.prototype.toString">
+            function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.descriptor.prototype.writeValue">
+            function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>writeValue
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.noble">module noble.noble</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.noble">
+            function <span class="apidocSignatureSpan">noble.</span>noble
+            <span class="apidocSignatureSpan">(bindings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.super_">
+            function <span class="apidocSignatureSpan">noble.noble.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.noble.prototype">module noble.noble.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.broadcast">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>broadcast
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, broadcast)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.connect">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>connect
+            <span class="apidocSignatureSpan">(peripheralUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.disconnect">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">(peripheralUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.discoverCharacteristics">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverCharacteristics
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.discoverDescriptors">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverDescriptors
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.discoverIncludedServices">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverIncludedServices
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, serviceUuids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.discoverServices">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverServices
+            <span class="apidocSignatureSpan">(peripheralUuid, uuids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.notify">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>notify
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, notify)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onAddressChange">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onAddressChange
+            <span class="apidocSignatureSpan">(address)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onBroadcast">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onBroadcast
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onCharacteristicsDiscover">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onCharacteristicsDiscover
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristics)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onConnect">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onConnect
+            <span class="apidocSignatureSpan">(peripheralUuid, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onDescriptorsDiscover">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDescriptorsDiscover
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onDisconnect">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDisconnect
+            <span class="apidocSignatureSpan">(peripheralUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onDiscover">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDiscover
+            <span class="apidocSignatureSpan">(uuid, address, addressType, connectable, advertisement, rssi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onHandleNotify">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleNotify
+            <span class="apidocSignatureSpan">(peripheralUuid, handle, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onHandleRead">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleRead
+            <span class="apidocSignatureSpan">(peripheralUuid, handle, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onHandleWrite">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleWrite
+            <span class="apidocSignatureSpan">(peripheralUuid, handle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onIncludedServicesDiscover">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onIncludedServicesDiscover
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, includedServiceUuids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onNotify">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onNotify
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onRead">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onRead
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, data, isNotification)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onRssiUpdate">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onRssiUpdate
+            <span class="apidocSignatureSpan">(peripheralUuid, rssi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onScanStart">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onScanStart
+            <span class="apidocSignatureSpan">(filterDuplicates)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onScanStop">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onScanStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onServicesDiscover">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onServicesDiscover
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onStateChange">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onStateChange
+            <span class="apidocSignatureSpan">(state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onValueRead">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onValueRead
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onValueWrite">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onValueWrite
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.onWrite">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onWrite
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.read">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>read
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.readHandle">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>readHandle
+            <span class="apidocSignatureSpan">(peripheralUuid, handle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.readValue">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>readValue
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.startScanning">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>startScanning
+            <span class="apidocSignatureSpan">(serviceUuids, allowDuplicates, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.stopScanning">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>stopScanning
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.updateRssi">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>updateRssi
+            <span class="apidocSignatureSpan">(peripheralUuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.write">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>write
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, data, withoutResponse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.writeHandle">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>writeHandle
+            <span class="apidocSignatureSpan">(peripheralUuid, handle, data, withoutResponse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.noble.prototype.writeValue">
+            function <span class="apidocSignatureSpan">noble.noble.prototype.</span>writeValue
+            <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.peripheral">module noble.peripheral</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.peripheral">
+            function <span class="apidocSignatureSpan">noble.</span>peripheral
+            <span class="apidocSignatureSpan">(noble, id, address, addressType, connectable, advertisement, rssi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.super_">
+            function <span class="apidocSignatureSpan">noble.peripheral.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.peripheral.prototype">module noble.peripheral.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.connect">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.disconnect">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.discoverAllServicesAndCharacteristics">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverAllServicesAndCharacteristics
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.discoverServices">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverServices
+            <span class="apidocSignatureSpan">(uuids, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.discoverSomeServicesAndCharacteristics">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverSomeServicesAndCharacteristics
+            <span class="apidocSignatureSpan">(serviceUuids, characteristicsUuids, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.readHandle">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>readHandle
+            <span class="apidocSignatureSpan">(handle, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.toString">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.updateRssi">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>updateRssi
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.peripheral.prototype.writeHandle">
+            function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>writeHandle
+            <span class="apidocSignatureSpan">(handle, data, withoutResponse, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.service">module noble.service</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service.service">
+            function <span class="apidocSignatureSpan">noble.</span>service
+            <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service.super_">
+            function <span class="apidocSignatureSpan">noble.service.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.service.prototype">module noble.service.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service.prototype.discoverCharacteristics">
+            function <span class="apidocSignatureSpan">noble.service.prototype.</span>discoverCharacteristics
+            <span class="apidocSignatureSpan">(characteristicUuids, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service.prototype.discoverIncludedServices">
+            function <span class="apidocSignatureSpan">noble.service.prototype.</span>discoverIncludedServices
+            <span class="apidocSignatureSpan">(serviceUuids, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.service.prototype.toString">
+            function <span class="apidocSignatureSpan">noble.service.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble" id="apidoc.module.noble">module noble</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble" id="apidoc.element.noble.noble">
+        function <span class="apidocSignatureSpan"></span>noble
+        <span class="apidocSignatureSpan">(bindings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Noble(bindings) {
+  this.state = 'unknown';
+  this.address = 'unknown';
+
+  this._bindings = bindings;
+  this._peripherals = {};
+  this._services = {};
+  this._characteristics = {};
+  this._descriptors = {};
+  this._discoveredPeripheralUUids = [];
+
+  this._bindings.on('stateChange', this.onStateChange.bind(this));
+  this._bindings.on('addressChange', this.onAddressChange.bind(this));
+  this._bindings.on('scanStart', this.onScanStart.bind(this));
+  this._bindings.on('scanStop', this.onScanStop.bind(this));
+  this._bindings.on('discover', this.onDiscover.bind(this));
+  this._bindings.on('connect', this.onConnect.bind(this));
+  this._bindings.on('disconnect', this.onDisconnect.bind(this));
+  this._bindings.on('rssiUpdate', this.onRssiUpdate.bind(this));
+  this._bindings.on('servicesDiscover', this.onServicesDiscover.bind(this));
+  this._bindings.on('includedServicesDiscover', this.onIncludedServicesDiscover.bind(this));
+  this._bindings.on('characteristicsDiscover', this.onCharacteristicsDiscover.bind(this));
+  this._bindings.on('read', this.onRead.bind(this));
+  this._bindings.on('write', this.onWrite.bind(this));
+  this._bindings.on('broadcast', this.onBroadcast.bind(this));
+  this._bindings.on('notify', this.onNotify.bind(this));
+  this._bindings.on('descriptorsDiscover', this.onDescriptorsDiscover.bind(this));
+  this._bindings.on('valueRead', this.onValueRead.bind(this));
+  this._bindings.on('valueWrite', this.onValueWrite.bind(this));
+  this._bindings.on('handleRead', this.onHandleRead.bind(this));
+  this._bindings.on('handleWrite', this.onHandleWrite.bind(this));
+  this._bindings.on('handleNotify', this.onHandleNotify.bind(this));
+
+  this.on('warning', function(message) {
+    if (this.listeners('warning').length === 1) {
+      console.warn('noble: ' + message);
+    }
+  }.bind(this));
+
+  this._bindings.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic" id="apidoc.element.noble.characteristic">
+        function <span class="apidocSignatureSpan">noble.</span>characteristic
+        <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, uuid, properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Characteristic(noble, peripheralId, serviceUuid, uuid, properties) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+  this._serviceUuid = serviceUuid;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+  this.properties = properties;
+  this.descriptors = null;
+
+  var characteristic = characteristics[uuid];
+  if (characteristic) {
+    this.name = characteristic.name;
+    this.type = characteristic.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor" id="apidoc.element.noble.descriptor">
+        function <span class="apidocSignatureSpan">noble.</span>descriptor
+        <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, characteristicUuid, uuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Descriptor(noble, peripheralId, serviceUuid, characteristicUuid, uuid) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+  this._serviceUuid = serviceUuid;
+  this._characteristicUuid = characteristicUuid;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+
+  var descriptor = descriptors[uuid];
+  if (descriptor) {
+    this.name = descriptor.name;
+    this.type = descriptor.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral" id="apidoc.element.noble.peripheral">
+        function <span class="apidocSignatureSpan">noble.</span>peripheral
+        <span class="apidocSignatureSpan">(noble, id, address, addressType, connectable, advertisement, rssi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Peripheral(noble, id, address, addressType, connectable, advertisement, rssi) {
+  this._noble = noble;
+
+  this.id = id;
+  this.uuid = id; // for legacy
+  this.address = address;
+  this.addressType = addressType;
+  this.connectable = connectable;
+  this.advertisement = advertisement;
+  this.rssi = rssi;
+  this.services = null;
+  this.state = 'disconnected';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service" id="apidoc.element.noble.service">
+        function <span class="apidocSignatureSpan">noble.</span>service
+        <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Service(noble, peripheralId, uuid) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+  this.includedServiceUuids = null;
+  this.characteristics = null;
+
+  var service = services[uuid];
+  if (service) {
+    this.name = service.name;
+    this.type = service.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble._bindings" id="apidoc.module.noble._bindings">module noble._bindings</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings.onSigIntBinded" id="apidoc.element.noble._bindings.onSigIntBinded">
+        function <span class="apidocSignatureSpan">noble._bindings.</span>onSigIntBinded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onSigIntBinded = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble._bindings._events" id="apidoc.module.noble._bindings._events">module noble._bindings._events</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.addressChange" id="apidoc.element.noble._bindings._events.addressChange">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>addressChange
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addressChange = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.broadcast" id="apidoc.element.noble._bindings._events.broadcast">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>broadcast
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">broadcast = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">broadcast</span>(broadcast[, callback(error)]); // broadcast is true|false
+```
+
+##### Subscribe
+
+```javascript
+characteristic.subscribe([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.characteristicsDiscover" id="apidoc.element.noble._bindings._events.characteristicsDiscover">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>characteristicsDiscover
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">characteristicsDiscover = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.connect" id="apidoc.element.noble._bindings._events.connect">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Peripheral
+
+##### Connect
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">connect</span>([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.disconnect([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.descriptorsDiscover" id="apidoc.element.noble._bindings._events.descriptorsDiscover">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>descriptorsDiscover
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">descriptorsDiscover = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.disconnect" id="apidoc.element.noble._bindings._events.disconnect">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.connect([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">disconnect</span>([callback(error)]);
+```
+
+##### Update RSSI
+
+```javascript
+peripheral.updateRssi([callback(error, rssi)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.discover" id="apidoc.element.noble._bindings._events.discover">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>discover
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discover = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.handleNotify" id="apidoc.element.noble._bindings._events.handleNotify">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleNotify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleNotify = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.handleRead" id="apidoc.element.noble._bindings._events.handleRead">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleRead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleRead = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.handleWrite" id="apidoc.element.noble._bindings._events.handleWrite">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>handleWrite
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleWrite = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.includedServicesDiscover" id="apidoc.element.noble._bindings._events.includedServicesDiscover">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>includedServicesDiscover
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">includedServicesDiscover = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.notify" id="apidoc.element.noble._bindings._events.notify">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>notify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+characteristic.once('broadcast', callback(state));
+```
+
+##### Notify
+
+Emitted when characteristic notification state changes, result of ```characteristic.<span class="apidocCodeKeywordSpan">notify<!--
+span-->(...)```.
+
+```javascript
+characteristic.once('notify', callback(state));
+```
+
+##### Descriptors discovered
+...</span></pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.read" id="apidoc.element.noble._bindings._events.read">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Characteristic
+
+##### Read
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">read</span>([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.write(data, withoutResponse[, callback(error)]); // data is a buffer, withoutResponse is true|false
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.rssiUpdate" id="apidoc.element.noble._bindings._events.rssiUpdate">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>rssiUpdate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rssiUpdate = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.scanStart" id="apidoc.element.noble._bindings._events.scanStart">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>scanStart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scanStart = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.scanStop" id="apidoc.element.noble._bindings._events.scanStop">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>scanStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scanStop = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.servicesDiscover" id="apidoc.element.noble._bindings._events.servicesDiscover">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>servicesDiscover
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">servicesDiscover = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.stateChange" id="apidoc.element.noble._bindings._events.stateChange">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>stateChange
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stateChange = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.valueRead" id="apidoc.element.noble._bindings._events.valueRead">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>valueRead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valueRead = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.valueWrite" id="apidoc.element.noble._bindings._events.valueWrite">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>valueWrite
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valueWrite = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings._events.write" id="apidoc.element.noble._bindings._events.write">
+        function <span class="apidocSignatureSpan">noble._bindings._events.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.read([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">write</span>(data, withoutResponse[, callback(error)]); // data is a buffer,
+withoutResponse is true|false
+```
+
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble._events" id="apidoc.module.noble._events">module noble._events</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble._events.warning" id="apidoc.element.noble._events.warning">
+        function <span class="apidocSignatureSpan">noble._events.</span>warning
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warning = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.characteristic" id="apidoc.module.noble.characteristic">module noble.characteristic</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.characteristic" id="apidoc.element.noble.characteristic.characteristic">
+        function <span class="apidocSignatureSpan">noble.</span>characteristic
+        <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, uuid, properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Characteristic(noble, peripheralId, serviceUuid, uuid, properties) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+  this._serviceUuid = serviceUuid;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+  this.properties = properties;
+  this.descriptors = null;
+
+  var characteristic = characteristics[uuid];
+  if (characteristic) {
+    this.name = characteristic.name;
+    this.type = characteristic.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.super_" id="apidoc.element.noble.characteristic.super_">
+        function <span class="apidocSignatureSpan">noble.characteristic.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.characteristic.prototype" id="apidoc.module.noble.characteristic.prototype">module noble.characteristic.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.broadcast" id="apidoc.element.noble.characteristic.prototype.broadcast">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>broadcast
+        <span class="apidocSignatureSpan">(broadcast, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">broadcast = function (broadcast, callback) {
+  if (callback) {
+    this.once('broadcast', function() {
+      callback(null);
+    });
+  }
+
+  this._noble.broadcast(
+    this._peripheralId,
+    this._serviceUuid,
+    this.uuid,
+    broadcast
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">broadcast</span>(broadcast[, callback(error)]); // broadcast is true|false
+```
+
+##### Subscribe
+
+```javascript
+characteristic.subscribe([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.discoverDescriptors" id="apidoc.element.noble.characteristic.prototype.discoverDescriptors">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>discoverDescriptors
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverDescriptors = function (callback) {
+  if (callback) {
+    this.once('descriptorsDiscover', function(descriptors) {
+      callback(null, descriptors);
+    });
+  }
+
+  this._noble.discoverDescriptors(
+    this._peripheralId,
+    this._serviceUuid,
+    this.uuid
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  * unsubscribe to a characteristic
+  * use for characteristics with notify or indicate properties
+
+##### Discover descriptors
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">discoverDescriptors</span>([callback(error, descriptors)]);
+```
+
+##### Read value
+
+```javascript
+descriptor.readValue([callback(error, data)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.notify" id="apidoc.element.noble.characteristic.prototype.notify">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>notify
+        <span class="apidocSignatureSpan">(notify, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (notify, callback) {
+  if (callback) {
+    this.once('notify', function() {
+      callback(null);
+    });
+  }
+
+  this._noble.notify(
+    this._peripheralId,
+    this._serviceUuid,
+    this.uuid,
+    notify
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+characteristic.once('broadcast', callback(state));
+```
+
+##### Notify
+
+Emitted when characteristic notification state changes, result of ```characteristic.<span class="apidocCodeKeywordSpan">notify<!--
+span-->(...)```.
+
+```javascript
+characteristic.once('notify', callback(state));
+```
+
+##### Descriptors discovered
+...</span></pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.read" id="apidoc.element.noble.characteristic.prototype.read">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>read
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (callback) {
+  if (callback) {
+    this.once('read', function(data) {
+      callback(null, data);
+    });
+  }
+
+  this._noble.read(
+    this._peripheralId,
+    this._serviceUuid,
+    this.uuid
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Characteristic
+
+##### Read
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">read</span>([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.write(data, withoutResponse[, callback(error)]); // data is a buffer, withoutResponse is true|false
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.subscribe" id="apidoc.element.noble.characteristic.prototype.subscribe">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>subscribe
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function (callback) {
+  this.notify(true, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.broadcast(broadcast[, callback(error)]); // broadcast is true|false
+```
+
+##### Subscribe
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">subscribe</span>([callback(error)]);
+```
+
+  * subscribe to a characteristic, triggers `'data'` events when peripheral sends an notification or indication
+  * use for characteristics with notify or indicate properties
+
+##### Unsubscribe
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.toString" id="apidoc.element.noble.characteristic.prototype.toString">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return JSON.stringify({
+    uuid: this.uuid,
+    name: this.name,
+    type: this.type,
+    properties: this.properties
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.unsubscribe" id="apidoc.element.noble.characteristic.prototype.unsubscribe">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>unsubscribe
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (callback) {
+  this.notify(false, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  * subscribe to a characteristic, triggers `'data'` events when peripheral sends an notification or indication
+  * use for characteristics with notify or indicate properties
+
+##### Unsubscribe
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">unsubscribe</span>([callback(error)]);
+```
+
+  * unsubscribe to a characteristic
+  * use for characteristics with notify or indicate properties
+
+##### Discover descriptors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.characteristic.prototype.write" id="apidoc.element.noble.characteristic.prototype.write">
+        function <span class="apidocSignatureSpan">noble.characteristic.prototype.</span>write
+        <span class="apidocSignatureSpan">(data, withoutResponse, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data, withoutResponse, callback) {
+  if (process.title !== 'browser') {
+    if (!(data instanceof Buffer)) {
+      throw new Error('data must be a Buffer');
+    }
+  }
+
+  if (callback) {
+    this.once('write', function() {
+      callback(null);
+    });
+  }
+
+  this._noble.write(
+    this._peripheralId,
+    this._serviceUuid,
+    this.uuid,
+    data,
+    withoutResponse
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.read([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">write</span>(data, withoutResponse[, callback(error)]); // data is a buffer,
+withoutResponse is true|false
+```
+
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.descriptor" id="apidoc.module.noble.descriptor">module noble.descriptor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor.descriptor" id="apidoc.element.noble.descriptor.descriptor">
+        function <span class="apidocSignatureSpan">noble.</span>descriptor
+        <span class="apidocSignatureSpan">(noble, peripheralId, serviceUuid, characteristicUuid, uuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Descriptor(noble, peripheralId, serviceUuid, characteristicUuid, uuid) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+  this._serviceUuid = serviceUuid;
+  this._characteristicUuid = characteristicUuid;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+
+  var descriptor = descriptors[uuid];
+  if (descriptor) {
+    this.name = descriptor.name;
+    this.type = descriptor.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor.super_" id="apidoc.element.noble.descriptor.super_">
+        function <span class="apidocSignatureSpan">noble.descriptor.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.descriptor.prototype" id="apidoc.module.noble.descriptor.prototype">module noble.descriptor.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor.prototype.readValue" id="apidoc.element.noble.descriptor.prototype.readValue">
+        function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>readValue
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readValue = function (callback) {
+  if (callback) {
+    this.once('valueRead', function(data) {
+      callback(null, data);
+    });
+  }
+  this._noble.readValue(
+    this._peripheralId,
+    this._serviceUuid,
+    this._characteristicUuid,
+    this.uuid
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.discoverDescriptors([callback(error, descriptors)]);
+```
+
+##### Read value
+
+```javascript
+descriptor.<span class="apidocCodeKeywordSpan">readValue</span>([callback(error, data)]);
+```
+
+##### Write value
+
+```javascript
+descriptor.writeValue(data[, callback(error)]); // data is a buffer
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor.prototype.toString" id="apidoc.element.noble.descriptor.prototype.toString">
+        function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return JSON.stringify({
+    uuid: this.uuid,
+    name: this.name,
+    type: this.type
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.descriptor.prototype.writeValue" id="apidoc.element.noble.descriptor.prototype.writeValue">
+        function <span class="apidocSignatureSpan">noble.descriptor.prototype.</span>writeValue
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeValue = function (data, callback) {
+  if (!(data instanceof Buffer)) {
+    throw new Error('data must be a Buffer');
+  }
+
+  if (callback) {
+    this.once('valueWrite', function() {
+      callback(null);
+    });
+  }
+  this._noble.writeValue(
+    this._peripheralId,
+    this._serviceUuid,
+    this._characteristicUuid,
+    this.uuid,
+    data
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+descriptor.readValue([callback(error, data)]);
+```
+
+##### Write value
+
+```javascript
+descriptor.<span class="apidocCodeKeywordSpan">writeValue</span>(data[, callback(error)]); // data is a buffer
+```
+
+#### Handle
+
+##### Read
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.noble" id="apidoc.module.noble.noble">module noble.noble</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.noble" id="apidoc.element.noble.noble.noble">
+        function <span class="apidocSignatureSpan">noble.</span>noble
+        <span class="apidocSignatureSpan">(bindings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Noble(bindings) {
+  this.state = 'unknown';
+  this.address = 'unknown';
+
+  this._bindings = bindings;
+  this._peripherals = {};
+  this._services = {};
+  this._characteristics = {};
+  this._descriptors = {};
+  this._discoveredPeripheralUUids = [];
+
+  this._bindings.on('stateChange', this.onStateChange.bind(this));
+  this._bindings.on('addressChange', this.onAddressChange.bind(this));
+  this._bindings.on('scanStart', this.onScanStart.bind(this));
+  this._bindings.on('scanStop', this.onScanStop.bind(this));
+  this._bindings.on('discover', this.onDiscover.bind(this));
+  this._bindings.on('connect', this.onConnect.bind(this));
+  this._bindings.on('disconnect', this.onDisconnect.bind(this));
+  this._bindings.on('rssiUpdate', this.onRssiUpdate.bind(this));
+  this._bindings.on('servicesDiscover', this.onServicesDiscover.bind(this));
+  this._bindings.on('includedServicesDiscover', this.onIncludedServicesDiscover.bind(this));
+  this._bindings.on('characteristicsDiscover', this.onCharacteristicsDiscover.bind(this));
+  this._bindings.on('read', this.onRead.bind(this));
+  this._bindings.on('write', this.onWrite.bind(this));
+  this._bindings.on('broadcast', this.onBroadcast.bind(this));
+  this._bindings.on('notify', this.onNotify.bind(this));
+  this._bindings.on('descriptorsDiscover', this.onDescriptorsDiscover.bind(this));
+  this._bindings.on('valueRead', this.onValueRead.bind(this));
+  this._bindings.on('valueWrite', this.onValueWrite.bind(this));
+  this._bindings.on('handleRead', this.onHandleRead.bind(this));
+  this._bindings.on('handleWrite', this.onHandleWrite.bind(this));
+  this._bindings.on('handleNotify', this.onHandleNotify.bind(this));
+
+  this.on('warning', function(message) {
+    if (this.listeners('warning').length === 1) {
+      console.warn('noble: ' + message);
+    }
+  }.bind(this));
+
+  this._bindings.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.super_" id="apidoc.element.noble.noble.super_">
+        function <span class="apidocSignatureSpan">noble.noble.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.noble.prototype" id="apidoc.module.noble.noble.prototype">module noble.noble.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.broadcast" id="apidoc.element.noble.noble.prototype.broadcast">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>broadcast
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, broadcast)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">broadcast = function (peripheralUuid, serviceUuid, characteristicUuid, broadcast) {
+   this._bindings.broadcast(peripheralUuid, serviceUuid, characteristicUuid, broadcast);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">broadcast</span>(broadcast[, callback(error)]); // broadcast is true|false
+```
+
+##### Subscribe
+
+```javascript
+characteristic.subscribe([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.connect" id="apidoc.element.noble.noble.prototype.connect">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>connect
+        <span class="apidocSignatureSpan">(peripheralUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (peripheralUuid) {
+  this._bindings.connect(peripheralUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Peripheral
+
+##### Connect
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">connect</span>([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.disconnect([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.disconnect" id="apidoc.element.noble.noble.prototype.disconnect">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">(peripheralUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function (peripheralUuid) {
+  this._bindings.disconnect(peripheralUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.connect([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">disconnect</span>([callback(error)]);
+```
+
+##### Update RSSI
+
+```javascript
+peripheral.updateRssi([callback(error, rssi)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.discoverCharacteristics" id="apidoc.element.noble.noble.prototype.discoverCharacteristics">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverCharacteristics
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverCharacteristics = function (peripheralUuid, serviceUuid, characteristicUuids) {
+  this._bindings.discoverCharacteristics(peripheralUuid, serviceUuid, characteristicUuids);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+service.discoverIncludedServices(serviceUUIDs[, callback(error, includedServiceUuids)]); // particular UUID's
+```
+
+##### Discover characteristics
+
+```javascript
+service.<span class="apidocCodeKeywordSpan">discoverCharacteristics</span>() // any characteristic UUID
+
+var characteristicUUIDs = ["&lt;characteristic UUID 1&gt;", ...];
+service.discoverCharacteristics(characteristicUUIDs[, callback(error, characteristics)]); // particular UUID's
+```
+
+#### Characteristic
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.discoverDescriptors" id="apidoc.element.noble.noble.prototype.discoverDescriptors">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverDescriptors
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverDescriptors = function (peripheralUuid, serviceUuid, characteristicUuid) {
+  this._bindings.discoverDescriptors(peripheralUuid, serviceUuid, characteristicUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  * unsubscribe to a characteristic
+  * use for characteristics with notify or indicate properties
+
+##### Discover descriptors
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">discoverDescriptors</span>([callback(error, descriptors)]);
+```
+
+##### Read value
+
+```javascript
+descriptor.readValue([callback(error, data)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.discoverIncludedServices" id="apidoc.element.noble.noble.prototype.discoverIncludedServices">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverIncludedServices
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, serviceUuids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverIncludedServices = function (peripheralUuid, serviceUuid, serviceUuids) {
+  this._bindings.discoverIncludedServices(peripheralUuid, serviceUuid, serviceUuids);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+peripheral.discoverSomeServicesAndCharacteristics(serviceUUIDs, characteristicUUIDs, [callback(error, services, characteristics));
+```
+#### Service
+
+##### Discover included services
+
+```javascript
+service.<span class="apidocCodeKeywordSpan">discoverIncludedServices</span>(); // any service UUID
+
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+service.discoverIncludedServices(serviceUUIDs[, callback(error, includedServiceUuids)]); // particular UUID's
+```
+
+##### Discover characteristics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.discoverServices" id="apidoc.element.noble.noble.prototype.discoverServices">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>discoverServices
+        <span class="apidocSignatureSpan">(peripheralUuid, uuids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverServices = function (peripheralUuid, uuids) {
+  this._bindings.discoverServices(peripheralUuid, uuids);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.updateRssi([callback(error, rssi)]);
+```
+
+##### Discover services
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">discoverServices</span>(); // any service UUID
+
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+peripheral.discoverServices(serviceUUIDs[, callback(error, services)]); // particular UUID's
+```
+
+##### Discover all services and characteristics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.notify" id="apidoc.element.noble.noble.prototype.notify">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>notify
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, notify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (peripheralUuid, serviceUuid, characteristicUuid, notify) {
+   this._bindings.notify(peripheralUuid, serviceUuid, characteristicUuid, notify);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+characteristic.once('broadcast', callback(state));
+```
+
+##### Notify
+
+Emitted when characteristic notification state changes, result of ```characteristic.<span class="apidocCodeKeywordSpan">notify<!--
+span-->(...)```.
+
+```javascript
+characteristic.once('notify', callback(state));
+```
+
+##### Descriptors discovered
+...</span></pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onAddressChange" id="apidoc.element.noble.noble.prototype.onAddressChange">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onAddressChange
+        <span class="apidocSignatureSpan">(address)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onAddressChange = function (address) {
+  debug('addressChange ' + address);
+
+  this.address = address;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onBroadcast" id="apidoc.element.noble.noble.prototype.onBroadcast">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onBroadcast
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onBroadcast = function (peripheralUuid, serviceUuid, characteristicUuid, state) {
+  var characteristic = this._characteristics[peripheralUuid][serviceUuid][characteristicUuid];
+
+  if (characteristic) {
+    characteristic.emit('broadcast', state);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' broadcast!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onCharacteristicsDiscover" id="apidoc.element.noble.noble.prototype.onCharacteristicsDiscover">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onCharacteristicsDiscover
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onCharacteristicsDiscover = function (peripheralUuid, serviceUuid, characteristics) {
+  var service = this._services[peripheralUuid][serviceUuid];
+
+  if (service) {
+    var characteristics_ = [];
+
+    for (var i = 0; i &lt; characteristics.length; i++) {
+      var characteristicUuid = characteristics[i].uuid;
+
+      var characteristic = new Characteristic(
+                                this,
+                                peripheralUuid,
+                                serviceUuid,
+                                characteristicUuid,
+                                characteristics[i].properties
+                            );
+
+      this._characteristics[peripheralUuid][serviceUuid][characteristicUuid] = characteristic;
+      this._descriptors[peripheralUuid][serviceUuid][characteristicUuid] = {};
+
+      characteristics_.push(characteristic);
+    }
+
+    service.characteristics = characteristics_;
+
+    service.emit('characteristicsDiscover', characteristics_);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ' characteristics discover!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onConnect" id="apidoc.element.noble.noble.prototype.onConnect">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onConnect
+        <span class="apidocSignatureSpan">(peripheralUuid, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onConnect = function (peripheralUuid, error) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.state = error ? 'error' : 'connected';
+    peripheral.emit('connect', error);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' connected!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onDescriptorsDiscover" id="apidoc.element.noble.noble.prototype.onDescriptorsDiscover">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDescriptorsDiscover
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onDescriptorsDiscover = function (peripheralUuid, serviceUuid, characteristicUuid, descriptors) {
+  var characteristic = this._characteristics[peripheralUuid][serviceUuid][characteristicUuid];
+
+  if (characteristic) {
+    var descriptors_ = [];
+
+    for (var i = 0; i &lt; descriptors.length; i++) {
+      var descriptorUuid = descriptors[i];
+
+      var descriptor = new Descriptor(
+                            this,
+                            peripheralUuid,
+                            serviceUuid,
+                            characteristicUuid,
+                            descriptorUuid
+                        );
+
+      this._descriptors[peripheralUuid][serviceUuid][characteristicUuid][descriptorUuid] = descriptor;
+
+      descriptors_.push(descriptor);
+    }
+
+    characteristic.descriptors = descriptors_;
+
+    characteristic.emit('descriptorsDiscover', descriptors_);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' descriptors
+ discover!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onDisconnect" id="apidoc.element.noble.noble.prototype.onDisconnect">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDisconnect
+        <span class="apidocSignatureSpan">(peripheralUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onDisconnect = function (peripheralUuid) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.state = 'disconnected';
+    peripheral.emit('disconnect');
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' disconnected!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onDiscover" id="apidoc.element.noble.noble.prototype.onDiscover">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onDiscover
+        <span class="apidocSignatureSpan">(uuid, address, addressType, connectable, advertisement, rssi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onDiscover = function (uuid, address, addressType, connectable, advertisement, rssi) {
+  var peripheral = this._peripherals[uuid];
+
+  if (!peripheral) {
+    peripheral = new Peripheral(this, uuid, address, addressType, connectable, advertisement, rssi);
+
+    this._peripherals[uuid] = peripheral;
+    this._services[uuid] = {};
+    this._characteristics[uuid] = {};
+    this._descriptors[uuid] = {};
+  } else {
+    // "or" the advertisment data with existing
+    for (var i in advertisement) {
+      if (advertisement[i] !== undefined) {
+        peripheral.advertisement[i] = advertisement[i];
+      }
+    }
+
+    peripheral.rssi = rssi;
+  }
+
+  var previouslyDiscoverd = (this._discoveredPeripheralUUids.indexOf(uuid) !== -1);
+
+  if (!previouslyDiscoverd) {
+    this._discoveredPeripheralUUids.push(uuid);
+  }
+
+  if (this._allowDuplicates || !previouslyDiscoverd) {
+    this.emit('discover', peripheral);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onHandleNotify" id="apidoc.element.noble.noble.prototype.onHandleNotify">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleNotify
+        <span class="apidocSignatureSpan">(peripheralUuid, handle, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onHandleNotify = function (peripheralUuid, handle, data) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.emit('handleNotify', handle, data);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' handle notify!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onHandleRead" id="apidoc.element.noble.noble.prototype.onHandleRead">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleRead
+        <span class="apidocSignatureSpan">(peripheralUuid, handle, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onHandleRead = function (peripheralUuid, handle, data) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.emit('handleRead' + handle, data);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' handle read!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onHandleWrite" id="apidoc.element.noble.noble.prototype.onHandleWrite">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onHandleWrite
+        <span class="apidocSignatureSpan">(peripheralUuid, handle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onHandleWrite = function (peripheralUuid, handle) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.emit('handleWrite' + handle);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' handle write!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onIncludedServicesDiscover" id="apidoc.element.noble.noble.prototype.onIncludedServicesDiscover">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onIncludedServicesDiscover
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, includedServiceUuids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onIncludedServicesDiscover = function (peripheralUuid, serviceUuid, includedServiceUuids) {
+  var service = this._services[peripheralUuid][serviceUuid];
+
+  if (service) {
+    service.includedServiceUuids = includedServiceUuids;
+
+    service.emit('includedServicesDiscover', includedServiceUuids);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ' included services discover!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onNotify" id="apidoc.element.noble.noble.prototype.onNotify">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onNotify
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onNotify = function (peripheralUuid, serviceUuid, characteristicUuid, state) {
+  var characteristic = this._characteristics[peripheralUuid][serviceUuid][characteristicUuid];
+
+  if (characteristic) {
+    characteristic.emit('notify', state);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' notify!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onRead" id="apidoc.element.noble.noble.prototype.onRead">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onRead
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, data, isNotification)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onRead = function (peripheralUuid, serviceUuid, characteristicUuid, data, isNotification) {
+  var characteristic = this._characteristics[peripheralUuid][serviceUuid][characteristicUuid];
+
+  if (characteristic) {
+    characteristic.emit('data', data, isNotification);
+
+    if (!isNotification) {
+      characteristic.emit('read', data, isNotification); // for backwards compatbility
+    }
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' read!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onRssiUpdate" id="apidoc.element.noble.noble.prototype.onRssiUpdate">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onRssiUpdate
+        <span class="apidocSignatureSpan">(peripheralUuid, rssi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onRssiUpdate = function (peripheralUuid, rssi) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    peripheral.rssi = rssi;
+
+    peripheral.emit('rssiUpdate', rssi);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' RSSI update!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onScanStart" id="apidoc.element.noble.noble.prototype.onScanStart">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onScanStart
+        <span class="apidocSignatureSpan">(filterDuplicates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onScanStart = function (filterDuplicates) {
+  debug('scanStart');
+  this.emit('scanStart', filterDuplicates);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onScanStop" id="apidoc.element.noble.noble.prototype.onScanStop">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onScanStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onScanStop = function () {
+  debug('scanStop');
+  this.emit('scanStop');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onServicesDiscover" id="apidoc.element.noble.noble.prototype.onServicesDiscover">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onServicesDiscover
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onServicesDiscover = function (peripheralUuid, serviceUuids) {
+  var peripheral = this._peripherals[peripheralUuid];
+
+  if (peripheral) {
+    var services = [];
+
+    for (var i = 0; i &lt; serviceUuids.length; i++) {
+      var serviceUuid = serviceUuids[i];
+      var service = new Service(this, peripheralUuid, serviceUuid);
+
+      this._services[peripheralUuid][serviceUuid] = service;
+      this._characteristics[peripheralUuid][serviceUuid] = {};
+      this._descriptors[peripheralUuid][serviceUuid] = {};
+
+      services.push(service);
+    }
+
+    peripheral.services = services;
+
+    peripheral.emit('servicesDiscover', services);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ' services discover!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onStateChange" id="apidoc.element.noble.noble.prototype.onStateChange">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onStateChange
+        <span class="apidocSignatureSpan">(state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onStateChange = function (state) {
+  debug('stateChange ' + state);
+
+  this.state = state;
+
+  this.emit('stateChange', state);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onValueRead" id="apidoc.element.noble.noble.prototype.onValueRead">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onValueRead
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onValueRead = function (peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data) {
+  var descriptor = this._descriptors[peripheralUuid][serviceUuid][characteristicUuid][descriptorUuid];
+
+  if (descriptor) {
+    descriptor.emit('valueRead', data);
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ', ' + descriptorUuid
+ + ' value read!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onValueWrite" id="apidoc.element.noble.noble.prototype.onValueWrite">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onValueWrite
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onValueWrite = function (peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid) {
+  var descriptor = this._descriptors[peripheralUuid][serviceUuid][characteristicUuid][descriptorUuid];
+
+  if (descriptor) {
+    descriptor.emit('valueWrite');
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ', ' + descriptorUuid
+ + ' value write!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.onWrite" id="apidoc.element.noble.noble.prototype.onWrite">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>onWrite
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onWrite = function (peripheralUuid, serviceUuid, characteristicUuid) {
+  var characteristic = this._characteristics[peripheralUuid][serviceUuid][characteristicUuid];
+
+  if (characteristic) {
+    characteristic.emit('write');
+  } else {
+    this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' write!');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.read" id="apidoc.element.noble.noble.prototype.read">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>read
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (peripheralUuid, serviceUuid, characteristicUuid) {
+   this._bindings.read(peripheralUuid, serviceUuid, characteristicUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Characteristic
+
+##### Read
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">read</span>([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.write(data, withoutResponse[, callback(error)]); // data is a buffer, withoutResponse is true|false
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.readHandle" id="apidoc.element.noble.noble.prototype.readHandle">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>readHandle
+        <span class="apidocSignatureSpan">(peripheralUuid, handle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readHandle = function (peripheralUuid, handle) {
+  this._bindings.readHandle(peripheralUuid, handle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Handle
+
+##### Read
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">readHandle</span>(handle, callback(error, data));
+```
+
+##### Write
+
+```javascript
+peripheral.writeHandle(handle, data, withoutResponse, callback(error));
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.readValue" id="apidoc.element.noble.noble.prototype.readValue">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>readValue
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readValue = function (peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid) {
+  this._bindings.readValue(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.discoverDescriptors([callback(error, descriptors)]);
+```
+
+##### Read value
+
+```javascript
+descriptor.<span class="apidocCodeKeywordSpan">readValue</span>([callback(error, data)]);
+```
+
+##### Write value
+
+```javascript
+descriptor.writeValue(data[, callback(error)]); // data is a buffer
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.startScanning" id="apidoc.element.noble.noble.prototype.startScanning">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>startScanning
+        <span class="apidocSignatureSpan">(serviceUuids, allowDuplicates, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startScanning = function (serviceUuids, allowDuplicates, callback) {
+  if (this.state !== 'poweredOn') {
+    var error = new Error('Could not start scanning, state is ' + this.state + ' (not poweredOn)');
+
+    if (typeof callback === 'function') {
+      callback(error);
+    } else {
+      throw error;
+    }
+  } else {
+    if (callback) {
+      this.once('scanStart', function(filterDuplicates) {
+        callback(null, filterDuplicates);
+      });
+    }
+
+    this._discoveredPeripheralUUids = [];
+    this._allowDuplicates = allowDuplicates;
+
+    this._bindings.startScanning(serviceUuids, allowDuplicates);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Actions
+
+#### Start scanning
+
+```javascript
+noble.<span class="apidocCodeKeywordSpan">startScanning</span>(); // any service UUID, no duplicates
+
+
+noble.startScanning([], true); // any service UUID, allow duplicates
+
+
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...]; // default: [] =&gt; all
+var allowDuplicates = &lt;false|true&gt;; // default: false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.stopScanning" id="apidoc.element.noble.noble.prototype.stopScanning">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>stopScanning
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopScanning = function (callback) {
+  if (callback) {
+    this.once('scanStop', callback);
+  }
+  this._bindings.stopScanning();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+__NOTE:__ ```noble.state``` must be ```poweredOn``` before scanning is started. ```noble.on('stateChange', callback(state
+));``` can be used register for state change events.
+
+#### Stop scanning
+
+```javascript
+noble.<span class="apidocCodeKeywordSpan">stopScanning</span>();
+```
+
+#### Peripheral
+
+##### Connect
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.updateRssi" id="apidoc.element.noble.noble.prototype.updateRssi">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>updateRssi
+        <span class="apidocSignatureSpan">(peripheralUuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateRssi = function (peripheralUuid) {
+  this._bindings.updateRssi(peripheralUuid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.disconnect([callback(error)]);
+```
+
+##### Update RSSI
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">updateRssi</span>([callback(error, rssi)]);
+```
+
+##### Discover services
+
+```javascript
+peripheral.discoverServices(); // any service UUID
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.write" id="apidoc.element.noble.noble.prototype.write">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>write
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, data, withoutResponse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (peripheralUuid, serviceUuid, characteristicUuid, data, withoutResponse) {
+   this._bindings.write(peripheralUuid, serviceUuid, characteristicUuid, data, withoutResponse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+characteristic.read([callback(error, data)]);
+```
+
+##### Write
+
+```javascript
+characteristic.<span class="apidocCodeKeywordSpan">write</span>(data, withoutResponse[, callback(error)]); // data is a buffer,
+withoutResponse is true|false
+```
+
+* ```withoutResponse```:
+  * ```false```: send a write request, used with "write" characteristic property
+  * ```true```: send a write command, used with "write without response" characteristic property
+
+##### Broadcast
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.writeHandle" id="apidoc.element.noble.noble.prototype.writeHandle">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>writeHandle
+        <span class="apidocSignatureSpan">(peripheralUuid, handle, data, withoutResponse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeHandle = function (peripheralUuid, handle, data, withoutResponse) {
+  this._bindings.writeHandle(peripheralUuid, handle, data, withoutResponse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.readHandle(handle, callback(error, data));
+```
+
+##### Write
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">writeHandle</span>(handle, data, withoutResponse, callback(error));
+```
+
+### Events
+
+See [Node.js EventEmitter docs](https://nodejs.org/api/events.html) for more info. on API's.
+
+#### Adapter state change
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.noble.prototype.writeValue" id="apidoc.element.noble.noble.prototype.writeValue">
+        function <span class="apidocSignatureSpan">noble.noble.prototype.</span>writeValue
+        <span class="apidocSignatureSpan">(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeValue = function (peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data) {
+  this._bindings.writeValue(peripheralUuid, serviceUuid, characteristicUuid, descriptorUuid, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+descriptor.readValue([callback(error, data)]);
+```
+
+##### Write value
+
+```javascript
+descriptor.<span class="apidocCodeKeywordSpan">writeValue</span>(data[, callback(error)]); // data is a buffer
+```
+
+#### Handle
+
+##### Read
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.peripheral" id="apidoc.module.noble.peripheral">module noble.peripheral</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.peripheral" id="apidoc.element.noble.peripheral.peripheral">
+        function <span class="apidocSignatureSpan">noble.</span>peripheral
+        <span class="apidocSignatureSpan">(noble, id, address, addressType, connectable, advertisement, rssi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Peripheral(noble, id, address, addressType, connectable, advertisement, rssi) {
+  this._noble = noble;
+
+  this.id = id;
+  this.uuid = id; // for legacy
+  this.address = address;
+  this.addressType = addressType;
+  this.connectable = connectable;
+  this.advertisement = advertisement;
+  this.rssi = rssi;
+  this.services = null;
+  this.state = 'disconnected';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.super_" id="apidoc.element.noble.peripheral.super_">
+        function <span class="apidocSignatureSpan">noble.peripheral.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.peripheral.prototype" id="apidoc.module.noble.peripheral.prototype">module noble.peripheral.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.connect" id="apidoc.element.noble.peripheral.prototype.connect">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback) {
+  if (callback) {
+    this.once('connect', function(error) {
+      callback(error);
+    });
+  }
+
+  if (this.state === 'connected') {
+    this.emit('connect', new Error('Peripheral already connected'));
+  } else {
+    this.state = 'connecting';
+    this._noble.connect(this.id);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Peripheral
+
+##### Connect
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">connect</span>([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.disconnect([callback(error)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.disconnect" id="apidoc.element.noble.peripheral.prototype.disconnect">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function (callback) {
+  if (callback) {
+    this.once('disconnect', function() {
+      callback(null);
+    });
+  }
+  this.state = 'disconnecting';
+  this._noble.disconnect(this.id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.connect([callback(error)]);
+```
+
+##### Disconnect or cancel pending connection
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">disconnect</span>([callback(error)]);
+```
+
+##### Update RSSI
+
+```javascript
+peripheral.updateRssi([callback(error, rssi)]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.discoverAllServicesAndCharacteristics" id="apidoc.element.noble.peripheral.prototype.discoverAllServicesAndCharacteristics">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverAllServicesAndCharacteristics
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverAllServicesAndCharacteristics = function (callback) {
+  this.discoverSomeServicesAndCharacteristics([], [], callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+peripheral.discoverServices(serviceUUIDs[, callback(error, services)]); // particular UUID's
+```
+
+##### Discover all services and characteristics
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">discoverAllServicesAndCharacteristics</span>([callback(error, services, characteristics
+));
+```
+
+##### Discover some services and characteristics
+
+```javascript
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+var characteristicUUIDs = ["&lt;characteristic UUID 1&gt;", ...];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.discoverServices" id="apidoc.element.noble.peripheral.prototype.discoverServices">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverServices
+        <span class="apidocSignatureSpan">(uuids, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverServices = function (uuids, callback) {
+  if (callback) {
+    this.once('servicesDiscover', function(services) {
+      callback(null, services);
+    });
+  }
+
+  this._noble.discoverServices(this.id, uuids);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.updateRssi([callback(error, rssi)]);
+```
+
+##### Discover services
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">discoverServices</span>(); // any service UUID
+
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+peripheral.discoverServices(serviceUUIDs[, callback(error, services)]); // particular UUID's
+```
+
+##### Discover all services and characteristics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.discoverSomeServicesAndCharacteristics" id="apidoc.element.noble.peripheral.prototype.discoverSomeServicesAndCharacteristics">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>discoverSomeServicesAndCharacteristics
+        <span class="apidocSignatureSpan">(serviceUuids, characteristicsUuids, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverSomeServicesAndCharacteristics = function (serviceUuids, characteristicsUuids, callback) {
+  this.discoverServices(serviceUuids, function(err, services) {
+    var numDiscovered = 0;
+    var allCharacteristics = [];
+
+    for (var i in services) {
+      var service = services[i];
+
+      service.discoverCharacteristics(characteristicsUuids, function(error, characteristics) {
+        numDiscovered++;
+
+        if (error === null) {
+          for (var j in characteristics) {
+            var characteristic = characteristics[j];
+
+            allCharacteristics.push(characteristic);
+          }
+        }
+
+        if (numDiscovered === services.length) {
+          if (callback) {
+            callback(null, services, allCharacteristics);
+          }
+        }
+      }.bind(this));
+    }
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+##### Discover some services and characteristics
+
+```javascript
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+var characteristicUUIDs = ["&lt;characteristic UUID 1&gt;", ...];
+peripheral.<span class="apidocCodeKeywordSpan">discoverSomeServicesAndCharacteristics</span>(serviceUUIDs, characteristicUUIDs, [
+callback(error, services, characteristics));
+```
+#### Service
+
+##### Discover included services
+
+```javascript
+service.discoverIncludedServices(); // any service UUID
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.readHandle" id="apidoc.element.noble.peripheral.prototype.readHandle">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>readHandle
+        <span class="apidocSignatureSpan">(handle, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readHandle = function (handle, callback) {
+  if (callback) {
+    this.once('handleRead' + handle, function(data) {
+      callback(null, data);
+    });
+  }
+
+  this._noble.readHandle(this.id, handle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Handle
+
+##### Read
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">readHandle</span>(handle, callback(error, data));
+```
+
+##### Write
+
+```javascript
+peripheral.writeHandle(handle, data, withoutResponse, callback(error));
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.toString" id="apidoc.element.noble.peripheral.prototype.toString">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return JSON.stringify({
+    id: this.id,
+    address: this.address,
+    addressType: this.addressType,
+    connectable: this.connectable,
+    advertisement: this.advertisement,
+    rssi: this.rssi,
+    state: this.state
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.updateRssi" id="apidoc.element.noble.peripheral.prototype.updateRssi">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>updateRssi
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateRssi = function (callback) {
+  if (callback) {
+    this.once('rssiUpdate', function(rssi) {
+      callback(null, rssi);
+    });
+  }
+
+  this._noble.updateRssi(this.id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.disconnect([callback(error)]);
+```
+
+##### Update RSSI
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">updateRssi</span>([callback(error, rssi)]);
+```
+
+##### Discover services
+
+```javascript
+peripheral.discoverServices(); // any service UUID
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.peripheral.prototype.writeHandle" id="apidoc.element.noble.peripheral.prototype.writeHandle">
+        function <span class="apidocSignatureSpan">noble.peripheral.prototype.</span>writeHandle
+        <span class="apidocSignatureSpan">(handle, data, withoutResponse, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeHandle = function (handle, data, withoutResponse, callback) {
+  if (!(data instanceof Buffer)) {
+    throw new Error('data must be a Buffer');
+  }
+
+  if (callback) {
+    this.once('handleWrite' + handle, function() {
+      callback(null);
+    });
+  }
+
+  this._noble.writeHandle(this.id, handle, data, withoutResponse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+peripheral.readHandle(handle, callback(error, data));
+```
+
+##### Write
+
+```javascript
+peripheral.<span class="apidocCodeKeywordSpan">writeHandle</span>(handle, data, withoutResponse, callback(error));
+```
+
+### Events
+
+See [Node.js EventEmitter docs](https://nodejs.org/api/events.html) for more info. on API's.
+
+#### Adapter state change
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.service" id="apidoc.module.noble.service">module noble.service</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service.service" id="apidoc.element.noble.service.service">
+        function <span class="apidocSignatureSpan">noble.</span>service
+        <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Service(noble, peripheralId, uuid) {
+  this._noble = noble;
+  this._peripheralId = peripheralId;
+
+  this.uuid = uuid;
+  this.name = null;
+  this.type = null;
+  this.includedServiceUuids = null;
+  this.characteristics = null;
+
+  var service = services[uuid];
+  if (service) {
+    this.name = service.name;
+    this.type = service.type;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service.super_" id="apidoc.element.noble.service.super_">
+        function <span class="apidocSignatureSpan">noble.service.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.service.prototype" id="apidoc.module.noble.service.prototype">module noble.service.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service.prototype.discoverCharacteristics" id="apidoc.element.noble.service.prototype.discoverCharacteristics">
+        function <span class="apidocSignatureSpan">noble.service.prototype.</span>discoverCharacteristics
+        <span class="apidocSignatureSpan">(characteristicUuids, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverCharacteristics = function (characteristicUuids, callback) {
+  if (callback) {
+    this.once('characteristicsDiscover', function(characteristics) {
+      callback(null, characteristics);
+    });
+  }
+
+  this._noble.discoverCharacteristics(
+    this._peripheralId,
+    this.uuid,
+    characteristicUuids
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+service.discoverIncludedServices(serviceUUIDs[, callback(error, includedServiceUuids)]); // particular UUID's
+```
+
+##### Discover characteristics
+
+```javascript
+service.<span class="apidocCodeKeywordSpan">discoverCharacteristics</span>() // any characteristic UUID
+
+var characteristicUUIDs = ["&lt;characteristic UUID 1&gt;", ...];
+service.discoverCharacteristics(characteristicUUIDs[, callback(error, characteristics)]); // particular UUID's
+```
+
+#### Characteristic
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service.prototype.discoverIncludedServices" id="apidoc.element.noble.service.prototype.discoverIncludedServices">
+        function <span class="apidocSignatureSpan">noble.service.prototype.</span>discoverIncludedServices
+        <span class="apidocSignatureSpan">(serviceUuids, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discoverIncludedServices = function (serviceUuids, callback) {
+  if (callback) {
+    this.once('includedServicesDiscover', function(includedServiceUuids) {
+      callback(null, includedServiceUuids);
+    });
+  }
+
+  this._noble.discoverIncludedServices(
+    this._peripheralId,
+    this.uuid,
+    serviceUuids
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+peripheral.discoverSomeServicesAndCharacteristics(serviceUUIDs, characteristicUUIDs, [callback(error, services, characteristics));
+```
+#### Service
+
+##### Discover included services
+
+```javascript
+service.<span class="apidocCodeKeywordSpan">discoverIncludedServices</span>(); // any service UUID
+
+var serviceUUIDs = ["&lt;service UUID 1&gt;", ...];
+service.discoverIncludedServices(serviceUUIDs[, callback(error, includedServiceUuids)]); // particular UUID's
+```
+
+##### Discover characteristics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.service.prototype.toString" id="apidoc.element.noble.service.prototype.toString">
+        function <span class="apidocSignatureSpan">noble.service.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return JSON.stringify({
+    uuid: this.uuid,
+    name: this.name,
+    type: this.type,
+    includedServiceUuids: this.includedServiceUuids
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
