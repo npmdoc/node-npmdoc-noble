@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a href="https://github.com/sandeepmistry/noble">noble (v1.8.0)</a>
+    <a href="https://github.com/sandeepmistry/noble">noble (v1.8.1)</a>
 </h1>
 <h4>A Node.js BLE (Bluetooth Low Energy) central library.</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -59,6 +59,24 @@
             <a class="apidocElementLiA" href="#apidoc.element.noble.noble">
             function <span class="apidocSignatureSpan"></span>noble
             <span class="apidocSignatureSpan">(bindings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings.onSigIntBinded">
+            function <span class="apidocSignatureSpan">noble.</span>_bindings.onSigIntBinded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._events.warning">
+            function <span class="apidocSignatureSpan">noble.</span>_events.warning
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -92,9 +110,36 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.noble.resolve_bindings">
+            function <span class="apidocSignatureSpan">noble.</span>resolve_bindings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.resolve_bindings_web">
+            function <span class="apidocSignatureSpan">noble.</span>resolve_bindings_web
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.noble.service">
             function <span class="apidocSignatureSpan">noble.</span>service
             <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.with_bindings">
+            function <span class="apidocSignatureSpan">noble.</span>with_bindings
+            <span class="apidocSignatureSpan">(bindings)</span>
             </a>
 
         </li>
@@ -487,11 +532,37 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble._bindings.onSigIntBinded">module noble._bindings.onSigIntBinded</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._bindings.onSigIntBinded.onSigIntBinded">
+            function <span class="apidocSignatureSpan">noble._bindings.</span>onSigIntBinded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.noble._events">module noble._events</a><ol>
 
         <li>
 
             <a class="apidocElementLiA" href="#apidoc.element.noble._events.warning">
+            function <span class="apidocSignatureSpan">noble._events.</span>warning
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble._events.warning">module noble._events.warning</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble._events.warning.warning">
             function <span class="apidocSignatureSpan">noble._events.</span>warning
             <span class="apidocSignatureSpan">()</span>
             </a>
@@ -1126,6 +1197,32 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.resolve_bindings">module noble.resolve_bindings</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.resolve_bindings.resolve_bindings">
+            function <span class="apidocSignatureSpan">noble.</span>resolve_bindings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.resolve_bindings_web">module noble.resolve_bindings_web</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.resolve_bindings_web.resolve_bindings_web">
+            function <span class="apidocSignatureSpan">noble.</span>resolve_bindings_web
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.noble.service">module noble.service</a><ol>
 
         <li>
@@ -1173,6 +1270,19 @@
             <a class="apidocElementLiA" href="#apidoc.element.noble.service.prototype.toString">
             function <span class="apidocSignatureSpan">noble.service.prototype.</span>toString
             <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.noble.with_bindings">module noble.with_bindings</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.noble.with_bindings.with_bindings">
+            function <span class="apidocSignatureSpan">noble.</span>with_bindings
+            <span class="apidocSignatureSpan">(bindings)</span>
             </a>
 
         </li>
@@ -1233,6 +1343,32 @@
 
   this._bindings.init();
 }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings.onSigIntBinded" id="apidoc.element.noble._bindings.onSigIntBinded">
+        function <span class="apidocSignatureSpan">noble.</span>_bindings.onSigIntBinded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_bindings.onSigIntBinded = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble._events.warning" id="apidoc.element.noble._events.warning">
+        function <span class="apidocSignatureSpan">noble.</span>_events.warning
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_events.warning = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1321,6 +1457,52 @@
 
 
     <h2>
+        <a href="#apidoc.element.noble.resolve_bindings" id="apidoc.element.noble.resolve_bindings">
+        function <span class="apidocSignatureSpan">noble.</span>resolve_bindings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve_bindings = function () {
+  var platform = os.platform();
+
+  if (process.env.NOBLE_WEBSOCKET) {
+    return require('./websocket/bindings');
+  } else if (process.env.NOBLE_DISTRIBUTED) {
+    return require('./distributed/bindings');
+  } else if (platform === 'darwin') {
+    return require('./mac/bindings');
+  } else if (platform === 'linux' || platform === 'freebsd' || platform === 'win32') {
+    return require('./hci-socket/bindings');
+  } else {
+    throw new Error('Unsupported platform');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.resolve_bindings_web" id="apidoc.element.noble.resolve_bindings_web">
+        function <span class="apidocSignatureSpan">noble.</span>resolve_bindings_web
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveBindings(){
+  if (navigator.bluetooth &amp;&amp; !process.env.NOBLE_WEBSOCKET) {
+    return require('./webbluetooth/bindings');
+  }
+
+  return require('./websocket/bindings');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.noble.service" id="apidoc.element.noble.service">
         function <span class="apidocSignatureSpan">noble.</span>service
         <span class="apidocSignatureSpan">(noble, peripheralId, uuid)</span>
@@ -1342,6 +1524,21 @@
     this.name = service.name;
     this.type = service.type;
   }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.noble.with_bindings" id="apidoc.element.noble.with_bindings">
+        function <span class="apidocSignatureSpan">noble.</span>with_bindings
+        <span class="apidocSignatureSpan">(bindings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">with_bindings = function (bindings) {
+  return new Noble(bindings);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1803,11 +2000,47 @@ withoutResponse is true|false
 </div>
 
 <div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble._bindings.onSigIntBinded" id="apidoc.module.noble._bindings.onSigIntBinded">module noble._bindings.onSigIntBinded</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble._bindings.onSigIntBinded.onSigIntBinded" id="apidoc.element.noble._bindings.onSigIntBinded.onSigIntBinded">
+        function <span class="apidocSignatureSpan">noble._bindings.</span>onSigIntBinded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onSigIntBinded = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.noble._events" id="apidoc.module.noble._events">module noble._events</a></h1>
 
 
     <h2>
         <a href="#apidoc.element.noble._events.warning" id="apidoc.element.noble._events.warning">
+        function <span class="apidocSignatureSpan">noble._events.</span>warning
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warning = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble._events.warning" id="apidoc.module.noble._events.warning">module noble._events.warning</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble._events.warning.warning" id="apidoc.element.noble._events.warning.warning">
         function <span class="apidocSignatureSpan">noble._events.</span>warning
         <span class="apidocSignatureSpan">()</span>
         </a>
@@ -2007,9 +2240,19 @@ characteristic.once('notify', callback(state));
     <ul>
     <li>description and source-code<pre class="apidocCodePre">read = function (callback) {
   if (callback) {
-    this.once('read', function(data) {
-      callback(null, data);
-    });
+    var onRead = function(data, isNotificaton) {
+      // only call the callback if 'read' event and non-notification
+      // 'read' for non-notifications is only present for backwards compatbility
+      if (!isNotificaton) {
+        // remove the listener
+        this.removeListener('read', onRead);
+
+        // call the callback
+        callback(null, data);
+      }
+    }.bind(this);
+
+    this.on('read', onRead);
   }
 
   this._noble.read(
@@ -2980,9 +3223,7 @@ characteristic.once('notify', callback(state));
   if (characteristic) {
     characteristic.emit('data', data, isNotification);
 
-    if (!isNotification) {
-      characteristic.emit('read', data, isNotification); // for backwards compatbility
-    }
+    characteristic.emit('read', data, isNotification); // for backwards compatbility
   } else {
     this.emit('warning', 'unknown peripheral ' + peripheralUuid + ', ' + serviceUuid + ', ' + characteristicUuid + ' read!');
   }
@@ -3862,6 +4103,62 @@ See [Node.js EventEmitter docs](https://nodejs.org/api/events.html) for more inf
 </div>
 
 <div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.resolve_bindings" id="apidoc.module.noble.resolve_bindings">module noble.resolve_bindings</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.resolve_bindings.resolve_bindings" id="apidoc.element.noble.resolve_bindings.resolve_bindings">
+        function <span class="apidocSignatureSpan">noble.</span>resolve_bindings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve_bindings = function () {
+  var platform = os.platform();
+
+  if (process.env.NOBLE_WEBSOCKET) {
+    return require('./websocket/bindings');
+  } else if (process.env.NOBLE_DISTRIBUTED) {
+    return require('./distributed/bindings');
+  } else if (platform === 'darwin') {
+    return require('./mac/bindings');
+  } else if (platform === 'linux' || platform === 'freebsd' || platform === 'win32') {
+    return require('./hci-socket/bindings');
+  } else {
+    throw new Error('Unsupported platform');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.resolve_bindings_web" id="apidoc.module.noble.resolve_bindings_web">module noble.resolve_bindings_web</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.resolve_bindings_web.resolve_bindings_web" id="apidoc.element.noble.resolve_bindings_web.resolve_bindings_web">
+        function <span class="apidocSignatureSpan">noble.</span>resolve_bindings_web
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveBindings(){
+  if (navigator.bluetooth &amp;&amp; !process.env.NOBLE_WEBSOCKET) {
+    return require('./webbluetooth/bindings');
+  }
+
+  return require('./websocket/bindings');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.noble.service" id="apidoc.module.noble.service">module noble.service</a></h1>
 
 
@@ -4007,6 +4304,26 @@ service.discoverIncludedServices(serviceUUIDs[, callback(error, includedServiceU
     type: this.type,
     includedServiceUuids: this.includedServiceUuids
   });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.noble.with_bindings" id="apidoc.module.noble.with_bindings">module noble.with_bindings</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.noble.with_bindings.with_bindings" id="apidoc.element.noble.with_bindings.with_bindings">
+        function <span class="apidocSignatureSpan">noble.</span>with_bindings
+        <span class="apidocSignatureSpan">(bindings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">with_bindings = function (bindings) {
+  return new Noble(bindings);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
