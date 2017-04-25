@@ -1,6 +1,6 @@
 # npmdoc-noble
 
-#### api documentation for  [noble (v1.8.1)](https://github.com/sandeepmistry/noble)  [![npm package](https://img.shields.io/npm/v/npmdoc-noble.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-noble) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-noble.svg)](https://travis-ci.org/npmdoc/node-npmdoc-noble)
+#### basic api documentation for  [noble (v1.8.1)](https://github.com/sandeepmistry/noble)  [![npm package](https://img.shields.io/npm/v/npmdoc-noble.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-noble) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-noble.svg)](https://travis-ci.org/npmdoc/node-npmdoc-noble)
 
 #### A Node.js BLE (Bluetooth Low Energy) central library.
 
@@ -89,7 +89,8 @@
         "pretest": "jshint *.js lib/. test/.",
         "test": "mocha -R spec test/*.js"
     },
-    "version": "1.8.1"
+    "version": "1.8.1",
+    "bin": {}
 }
 ```
 
